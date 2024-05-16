@@ -34,7 +34,8 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div id="paypal-button-container"></div>
+                                <div id="paypal-button-container"></div> 
+                                <button id="btnPagar" type="button" class="btn btn-dark btn-lg">Pagar</button>
                             </div>
                         </div>
                     </div>
@@ -47,7 +48,7 @@
 <?php include "Views/template/footer.php"; ?>
 
 <script src="<?php echo BASE_URL; ?>public/admin/js/jquery.min.js"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=USD"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=PYG"></script>
 <script src="<?php echo BASE_URL; ?>public/js/pagos.js"></script>
 </body>
 

@@ -61,7 +61,7 @@ function mostrarProductos() {
                 <h5>${producto.nombre}</h5>
             </td>
             <td class="shoping__cart__price">
-                $ ${producto.precio}
+                Gs. ${producto.precio}
             </td>
             <td class="shoping__cart__quantity">
                 <div class="quantity">
@@ -71,7 +71,7 @@ function mostrarProductos() {
                 </div>
             </td>
             <td class="shoping__cart__total">
-                $ ${producto.subTotal}
+                Gs. ${producto.subTotal}
             </td>
             <td class="shoping__cart__item__close carrito-eliminar">
                 <span class="icon_close"></span>
@@ -86,7 +86,7 @@ function mostrarProductos() {
         </td>`;
       }
       tblCarrito.innerHTML = html;
-        contenedorTotal.textContent = "$" + data.total;
+        contenedorTotal.textContent = "Gs." + data.total;
         actualizarBotonesEliminar();
     });
 }

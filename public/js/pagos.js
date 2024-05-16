@@ -32,7 +32,7 @@ function mostrarPaypal(total) {
                 value: total,
                 breakdown: {
                   item_total: {
-                    /* Required when including the `items` array */
+                    // Required when including the `items` array 
                     currency_code: "PYG",
                     value: total,
                   },
@@ -74,7 +74,14 @@ function mostrarPaypal(total) {
       },
     })
     .render("#paypal-button-container");
+} 
+
+
+function mostrarMetrepay(total) {
+  alert(total);
 }
+
+
 
 function mostrarProductos() {
   fetch(ruta + "principal/listaProductos", {
@@ -103,7 +110,7 @@ function mostrarProductos() {
                 </div>
             </td>
             <td class="shoping__cart__total">
-                $ ${producto.subTotal}
+                Gs. ${producto.subTotal}
             </td>
 	  </tr>`;
         //agregrar producto para paypal
@@ -119,8 +126,9 @@ function mostrarProductos() {
         productosjson.push(json);
       });
       contenedorCarritoProductos.innerHTML = html;
-      contenedorTotal.textContent = "$" + data.total;
+      contenedorTotal.textContent = "Gs." + data.total;
       document.getElementById("paypal-button-container").innerHTML = "";
       mostrarPaypal(data.totalPaypal);
+      mostrarMetrepay(data.totalPaypal);
     });
 }

@@ -60,8 +60,9 @@
                     <h5>Cart Total</h5>
                     <ul>
                         <!-- <li>Subtotal <span>$454.98</span></li> -->
-                        <li>Total <span id="total">$454.98</span></li>
+                        <li>Total <span id="total">Gs. 454.98</span></li>
                     </ul>
+                    <!-- <a href="<?php echo BASE_URL . 'principal/address'; ?>" class="primary-btn mb-2">CHECKOUT</a> -->
                     <a href="<?php echo BASE_URL . 'principal/order'; ?>" class="primary-btn mb-2">CHECKOUT</a>
                     <!-- <input type="hidden" id="whatsapp-negocio" value="<?php echo $data['negocio']['whatsapp']; ?>">
                     <a href="#" class="btn btn-success btn-block" id="carrito-whatsapp">WHATSAPP</a> -->

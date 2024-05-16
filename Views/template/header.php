@@ -174,11 +174,11 @@
                             <div class="hero__search__phone__text">
                                 <h5><?php echo $data['negocio']['telefono']; ?></h5>
                                 <span><?php echo $data['negocio']['direccion']; ?></span>
-                            </div> -->
+                            </div> 
                         </div>
                     </div>
                     <?php if ($data['title'] == 'Pagina Principal') { ?>
-                        <!-- <div class="hero__item set-bg" data-setbg="<?php echo BASE_URL; ?>public/img/hero/banner.jpg">
+                        <<div class="hero__item set-bg" data-setbg="<?php echo BASE_URL; ?>public/img/hero/banner.jpg">
                             <div class="hero__text">
                                 <span>FRUTA FRESCA</span>
                                 <h2>Vegetable <br />100% Organicos</h2>
@@ -191,4 +191,4 @@
             </div>
         </div>
     </section> -->
-    <!-- Hero Section End -->
+    <!-- Hero Section End
