@@ -1,7 +1,7 @@
 <?php include "Views/template/header.php"; ?>
 
 <!-- Categories Section Begin -->
-<!-- <section class="categories">
+<section class="categories">
     <div class="container">
         <div class="row">
             <div class="categories__slider owl-carousel">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- Categories Section End -->
 
 <!-- Featured Section Begin -->
@@ -42,14 +42,14 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="<?php echo BASE_URL . 'public/img/productos/' . $producto['imagen']; ?>">
                             <ul class="featured__item__pic__hover">
-                                <!-- <li><a href="https://api.whatsapp.com/send?phone=<?php echo $data['negocio']['whatsapp'] . '&text=Productos= ' . $producto['nombre'] . ' Precio(' . $producto['precio'] . ')'; ?>" target="_blank"><i class="fa fa-whatsapp"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>-->
+                                <li><a href="https://api.whatsapp.com/send?phone=<?php echo $data['negocio']['whatsapp'] . '&text=Productos= ' . $producto['nombre'] . ' Precio(' . $producto['precio'] . ')'; ?>" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-retweet"></i></a></li> -->
                                 <li><a href="#" stock="<?php echo $producto['cantidad']; ?>" class="producto-agregar" id="<?php echo $producto['id']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#"><?php echo $producto['nombre']; ?></a></h6>
-                            <h5>Gs. <?php echo $producto['precio']; ?></h5>
+                            <h5>$<?php echo $producto['precio']; ?></h5>
                         </div>
                     </div>
                 </div>

@@ -118,32 +118,6 @@ class Principal extends Controller
         $this->views->getView('principal', "contactos", $data);
     }
 
-    /* public function listaProductos()
-    {
-        $datos = file_get_contents('php://input');
-        $json = json_decode($datos, true);
-        $array['productos'] = array();
-        $total = 0;
-        if (!empty($json)) {
-            foreach ($json as $producto) {
-                $result = $this->model->getProducto($producto['id']);
-                $data['id'] = $result['id'];
-                $data['nombre'] = $result['nombre'];
-                $data['precio'] = $result['precio'];
-                $data['cantidad'] = $producto['cantidad'];
-                $data['imagen'] = $result['imagen'];
-                $subTotal = $data['precio'] * $producto['cantidad'];
-                $data['subTotal'] = number_format($subTotal, 2);
-                array_push($array['productos'], $data);
-                $total += $subTotal;
-            }
-        }
-        $array['total'] = number_format($total, 2);
-        $array['totalPaypal'] = number_format($total, 2, '.', '');
-        echo json_encode($array, JSON_UNESCAPED_UNICODE);
-        die();
-    } */
-
 public function listaProductos()
 {
     $datos = file_get_contents('php://input');
@@ -156,24 +130,19 @@ public function listaProductos()
             $data['id'] = $result['id'];
             $data['nombre'] = $result['nombre'];
             $data['precio'] = $result['precio'];
-            
-            $cantidad = intval($producto['cantidad']);
-            $data['cantidad'] = $cantidad;
-            
+            $data['cantidad'] = $producto['cantidad'];
             $data['imagen'] = $result['imagen'];
-            $subTotal = $data['precio'] * $cantidad; 
-            $data['subTotal'] = number_format($subTotal, 0, '.', '.');
+            $subTotal = $data['precio'] * $producto['cantidad'];
+            $data['subTotal'] = number_format($subTotal, 0, '', '.');
             array_push($array['productos'], $data);
             $total += $subTotal;
         }
     }
-    // Formatear el total con separador de miles punto
-    $array['total'] = number_format($total, 0, '.', '.');
-    $array['totalPaypal'] = number_format($total, 0, '.', '');
+    $array['total'] = number_format($total, 0, '', '.');
+    $array['totalPaypal'] = number_format($total, 0, '', '');
     echo json_encode($array, JSON_UNESCAPED_UNICODE);
     die();
 }
-
 
     //reset password
     public function recoverpw()

@@ -1,49 +1,31 @@
 //LOGIN
-document.addEventListener("DOMContentLoaded", function() {
-  console.clear();
+console.clear();
 
-  const loginTitle = document.getElementById('loginForm');
-  const signupTitle = document.getElementById('signup');
-  const btnLogin = document.getElementById('btnLogin');
-  const btnRegister = document.getElementById('btnRegister');
-  const loginForm = document.querySelector('.login');
-  const signupForm = document.querySelector('.signup');
+const loginBtn = document.getElementById('loginForm');
+const signupBtn = document.getElementById('signup');
 
-  if (loginTitle) {
-      loginTitle.addEventListener('click', (e) => {
-          let parent = loginForm.parentNode.parentNode;
-          Array.from(parent.classList).find((element) => {
-              if (element !== "slide-up") {
-                  parent.classList.add('slide-up');
-              } else {
-                  if (signupForm) {
-                      signupForm.classList.add('slide-up');
-                  }
-                  parent.classList.remove('slide-up');
-              }
-          });
-      });
-  } else {
-      console.error("Elemento con id 'loginForm' no encontrado.");
-  }
+loginBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode.parentNode;
+	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			signupBtn.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
+});
 
-  if (signupTitle) {
-      signupTitle.addEventListener('click', (e) => {
-          let parent = signupForm.parentNode;
-          Array.from(parent.classList).find((element) => {
-              if (element !== "slide-up") {
-                  parent.classList.add('slide-up');
-              } else {
-                  if (loginForm) {
-                      loginForm.classList.add('slide-up');
-                  }
-                  parent.classList.remove('slide-up');
-              }
-          });
-      });
-  } else {
-      console.error("Elemento con id 'signup' no encontrado.");
-  }
+signupBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode;
+	Array.from(e.target.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			loginBtn.parentNode.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
 });
 //FIN LOGIN
 

@@ -57,8 +57,8 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
-                <!-- <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li> -->
-                <!-- <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li> -->
+                <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
+                <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -85,18 +85,18 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <!-- <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li>
-                                <li>Tienda online</li> -->
+                                <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li>
+                                <li>Tienda online</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <!-- <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a> -->
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__auth">
                                 <?php if (empty($_SESSION['id_usuario'])) { ?>
@@ -122,7 +122,7 @@
                         <ul>
                             <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
                             <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
-                            <!-- <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li> -->
+                            <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -143,7 +143,7 @@
     </header>
     <!-- Header Section End -->
     <!-- Hero Section Begin -->
-    <!-- <section class="hero <?php echo ($data['title'] == 'Tu carrito') ? 'hero-normal' : ''; ?>">
+    <section class="hero <?php echo ($data['title'] == 'Tu carrito') ? 'hero-normal' : ''; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -168,27 +168,27 @@
                             </form>
                         </div>
                         <div class="hero__search__phone">
-                             <div class="hero__search__phone__icon">
+                            <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5><?php echo $data['negocio']['telefono']; ?></h5>
                                 <span><?php echo $data['negocio']['direccion']; ?></span>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                     <?php if ($data['title'] == 'Pagina Principal') { ?>
-                        <<div class="hero__item set-bg" data-setbg="<?php echo BASE_URL; ?>public/img/hero/banner.jpg">
+                        <div class="hero__item set-bg" data-setbg="<?php echo BASE_URL; ?>public/img/hero/banner.jpg">
                             <div class="hero__text">
-                                <span>FRUTA FRESCA</span>
+                                <!-- <span>FRUTA FRESCA</span>
                                 <h2>Vegetable <br />100% Organicos</h2>
-                                <p>Recogida y entrega gratuitas disponibles</p>
+                                <p>Recogida y entrega gratuitas disponibles</p> -->
                                 <a href="<?php echo BASE_URL . 'principal/productos'; ?>" class="primary-btn">Ver productos</a>
                             </div>
-                        </div> 
+                        </div>
                     <?php } ?>
                 </div>
             </div>
         </div>
-    </section> -->
-    <!-- Hero Section End
+    </section>
+    <!-- Hero Section End -->

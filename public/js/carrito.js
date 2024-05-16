@@ -86,7 +86,7 @@ function mostrarProductos() {
         </td>`;
       }
       tblCarrito.innerHTML = html;
-        contenedorTotal.textContent = "Gs." + data.total;
+        contenedorTotal.textContent = "Gs" + data.total;
         actualizarBotonesEliminar();
     });
 }

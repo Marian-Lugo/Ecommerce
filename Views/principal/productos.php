@@ -107,8 +107,8 @@
     //filtro por categorias
     categorias.forEach(function(checkbox) {
         checkbox.addEventListener("click", function() {
-            var minSelectedPrice = minamount.value.toString().replace('$', '');
-            var maxSelectedPrice = maxamount.value.toString().replace('$', '');
+            var minSelectedPrice = minamount.value.toString().replace('Gs.', '');
+            var maxSelectedPrice = maxamount.value.toString().replace('Gs.', '');
             const precios = minSelectedPrice + ';' + maxSelectedPrice;
             handleCheckboxClick(precios);
         });
@@ -145,7 +145,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">${producto.nombre}</a></h6>
-                            <h5>$${producto.precio}</h5>
+                            <h5>Gs.${producto.precio}</h5>
                         </div>
                     </div>
                 </div>`;

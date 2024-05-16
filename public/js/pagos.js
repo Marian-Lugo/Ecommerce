@@ -28,12 +28,12 @@ function mostrarPaypal(total) {
           purchase_units: [
             {
               amount: {
-                currency_code: "PYG",
+                currency_code: "USD",
                 value: total,
                 breakdown: {
                   item_total: {
-                    // Required when including the `items` array 
-                    currency_code: "PYG",
+                    /* Required when including the `items` array */
+                    currency_code: "USD",
                     value: total,
                   },
                 },
@@ -74,14 +74,7 @@ function mostrarPaypal(total) {
       },
     })
     .render("#paypal-button-container");
-} 
-
-
-function mostrarMetrepay(total) {
-  alert(total);
 }
-
-
 
 function mostrarProductos() {
   fetch(ruta + "principal/listaProductos", {
@@ -118,7 +111,7 @@ function mostrarProductos() {
           name: producto.nombre,
           /* Shows within upper-right dropdown during payment approval */
           unit_amount: {
-            currency_code: "PYG",
+            currency_code: "USD",
             value: producto.precio,
           },
           quantity: producto.cantidad,
@@ -129,6 +122,5 @@ function mostrarProductos() {
       contenedorTotal.textContent = "Gs." + data.total;
       document.getElementById("paypal-button-container").innerHTML = "";
       mostrarPaypal(data.totalPaypal);
-      mostrarMetrepay(data.totalPaypal);
     });
 }
