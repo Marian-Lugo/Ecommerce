@@ -55,7 +55,7 @@ class Categorias extends Controller
                     } else {
                         $result = $this->model->verificarCategoria($categoria);
                         if (empty($result)) {
-                            $data = $this->model->registrar($categoria,$destino,);
+                            $data = $this->model->registrar($categoria,$destino);
                             if ($data > 0) {
                                 $destino = 'public/img/categorias/' . $nombreImg . '.jpg';
                                 move_uploaded_file($tmp_name, $destino);

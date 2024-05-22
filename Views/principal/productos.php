@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                     <div class="sidebar__item">
-                        <h4>Price</h4>
+                        <h4>Precio</h4>
                         <div class="price-range-wrap">
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="<?php echo (empty($data['minimo']['total'])) ? 0 : round($data['minimo']['total'], 0); ?>" data-max="<?php echo (empty($data['maximo']['total'])) ? 1 : round($data['maximo']['total'], 0); ?>">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>

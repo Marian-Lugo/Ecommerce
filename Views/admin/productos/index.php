@@ -30,7 +30,7 @@
                         <th>Categoria</th>
                         <th>Stock</th>
                         <th>Imagen</th>
-                        <th></th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -49,7 +49,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#"><?php echo $producto['nombre']; ?></a></h6>
-                            <h5>$<?php echo $producto['precio']; ?></h5>
+                            <h5>Gs.<?php echo number_format($producto['precio'], 0, ',', '.'); ?></h5>
                         </div>
                     </div>
                 </div>

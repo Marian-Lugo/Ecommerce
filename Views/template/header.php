@@ -58,7 +58,7 @@
             <ul>
                 <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
                 <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
-                <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li>
+                <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Sugerencias</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -70,8 +70,8 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li>
-                <li>Tienda online</li>
+                <!-- <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li> -->
+                <!-- <li>Tienda online</li> -->
             </ul>
         </div>
     </div>
@@ -85,8 +85,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li>
-                                <li>Tienda online</li>
+                                <!-- <li><i class="fa fa-envelope"></i> <?php echo $data['negocio']['correo']; ?></li> -->
+                                <!-- <li>Tienda online</li> -->
                             </ul>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                         <ul>
                             <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
                             <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
-                            <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Contactos</a></li>
+                            <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Sugerencias</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -150,7 +150,16 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>Todas las categorias</span>
+                            <span>Todas las categorias - indirectas</span>
+                        </div>
+                        <ul>
+                            <?php foreach ($data['categorias'] as $categoria) { ?>
+                                <li><a href="<?php echo BASE_URL . 'principal/categoria/' . $categoria['categoria']; ?>"><?php echo $categoria['categoria']; ?></a></li>
+                            <?php } ?>
+                        </ul>
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Todas las categorias - directas</span>
                         </div>
                         <ul>
                             <?php foreach ($data['categorias'] as $categoria) { ?>
@@ -168,12 +177,12 @@
                             </form>
                         </div>
                         <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
+                            <!-- <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
-                            </div>
+                            </div> -->
                             <div class="hero__search__phone__text">
-                                <h5><?php echo $data['negocio']['telefono']; ?></h5>
-                                <span><?php echo $data['negocio']['direccion']; ?></span>
+                                <!-- <h5><?php echo $data['negocio']['telefono']; ?></h5>
+                                <span><?php echo $data['negocio']['direccion']; ?></span> -->
                             </div>
                         </div>
                     </div>

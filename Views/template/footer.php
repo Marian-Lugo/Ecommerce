@@ -8,9 +8,9 @@
             <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/img/logo.png" alt="" width="50"></a>
           </div>
           <ul>
-            <li>Address: <?php echo $data['negocio']['direccion']; ?></li>
-            <li>Phone: <?php echo $data['negocio']['telefono']; ?></li>
-            <li>Email: <?php echo $data['negocio']['correo']; ?></li>
+            <li>Dirección: <?php echo $data['negocio']['direccion']; ?></li>
+            <li>Teléfono: <?php echo $data['negocio']['telefono']; ?></li>
+            <li>E-mail: <?php echo $data['negocio']['correo']; ?></li>
           </ul>
         </div>
       </div>

@@ -27,7 +27,7 @@
                         <th>#</th>
                         <th>Nombre</th>
                         <th>Imagen</th>
-                        <th></th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
