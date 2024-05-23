@@ -95,6 +95,12 @@
                         <li class="">
                             <a href="<?php echo BASE_URL . 'manzanas'; ?>" class="waves-effect"><i class="fas fa-list-alt mr-3"></i> <span> Manzanas </span> </a>
                         </li>
+                        <li class="">
+                            <a href="<?php echo BASE_URL . 'sectores'; ?>" class="waves-effect"><i class="fas fa-list-alt mr-3"></i> <span> Sectores </span> </a>
+                        </li>
+                        <li class="">
+                            <a href="<?php echo BASE_URL . 'ubicaciones'; ?>" class="waves-effect"><i class="fas fa-list-alt mr-3"></i> <span> Ubicación </span> </a>
+                        </li>
 
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-shopping-cart mr-3"></i> <span> Ventas </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>

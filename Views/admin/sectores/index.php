@@ -5,7 +5,7 @@
         <div class="page-title-box">
             <div class="row align-items-center">
                 <div class="col-md-12">
-                    <h4 class="page-title m-0">Manzanas</h4>
+                    <h4 class="page-title m-0">Sectores</h4>
                 </div>
                 <!-- end col -->
             </div>
@@ -21,11 +21,12 @@
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover align-middle" style="width: 100%;" id="tblManzanas">
+            <table class="table table-bordered table-striped table-hover display nowrap align-middle" style="width: 100%;" id="tblSectores">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Descripción</th>
+                        <th>Manzana</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -35,6 +36,7 @@
         </div>
     </div>
 </div>
+
 
 <div id="nuevoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -47,10 +49,30 @@
             </div>
             <form id="frmRegistro" autocomplete="off">
                 <div class="modal-body">
-                    <input type="hidden" id="id" name="id">
-                    <div class="form-group mb-2">
-                        <label for="descripcion">Descripción</label>
-                        <input id="descripcion" class="form-control" type="text" name="descripcion" placeholder="Descripción de la manzana">
+                    <div class="row">
+                        <input type="hidden" id="id" name="id">
+
+                        <div class="col-md-12 mb-3">
+                            <label for="descripcion">Descripción <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-list"></i></span>
+                                <input id="descripcion" class="form-control" type="text" name="descripcion" placeholder="Descripción del Sector">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="id_manzana">Manzana <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <select id="id_manzana" class="form-control" name="id_manzana">
+                                    <option value="">Seleccionar</option>
+                                    <?php foreach ($data['manzanas'] as $manzana) { ?>
+                                        <option value="<?php echo $manzana['id_manzana']; ?>"><?php echo $manzana['descripcion']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -64,7 +86,7 @@
 
 <?php include_once 'Views/template/footer-admin.php'; ?>
 
-<script src="<?php echo BASE_URL . 'public/admin/js/page/manzanas.js'; ?>"></script>
+<script src="<?php echo BASE_URL . 'public/admin/js/page/sectores.js'; ?>"></script>
 
 </body>
 

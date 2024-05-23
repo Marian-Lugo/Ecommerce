@@ -5,6 +5,7 @@ class ManzanasModel extends Query{
     {
         parent::__construct();
     }
+    
     public function getManzanas($estado)
     {
         $sql = "SELECT * FROM manzanas WHERE estado = $estado";
@@ -13,10 +14,11 @@ class ManzanasModel extends Query{
 
     public function registrar($descripcion)
     {
-        $sql = "INSERT INTO manzanas (descripcion) VALUES (?)";
+        $sql = "INSERT INTO manzanas (descripcion, estado) VALUES (?, 1)";
         $array = array($descripcion);
         return $this->insertar($sql, $array);
     }
+
     public function verificarManzana($descripcion)
     {
         $sql = "SELECT descripcion FROM manzanas WHERE descripcion = '$descripcion' AND estado = 1";
@@ -38,10 +40,9 @@ class ManzanasModel extends Query{
 
     public function modificar($descripcion, $id)
     {
-        $sql = "UPDATE manzanas SET descripcion= ? WHERE id_manzana = ?";
+        $sql = "UPDATE manzanas SET descripcion=? WHERE id_manzana = ?";
         $array = array($descripcion, $id);
         return $this->save($sql, $array);
     }
 }
- 
 ?>

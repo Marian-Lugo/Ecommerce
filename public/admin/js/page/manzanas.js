@@ -1,9 +1,9 @@
-const nuevoManzana = document.querySelector("#nuevo_registro_manzana");
-const frmManzana = document.querySelector("#frmRegistroManzana");
-const titleModalManzana = document.querySelector("#titleModalManzana");
-const descripcionManzana = document.querySelector("#descripcion_manzana");
-const btnAccionManzana = document.querySelector("#btnAccionManzana");
-const myModalManzana = new bootstrap.Modal(document.getElementById("nuevoModalManzana"));
+const nuevo = document.querySelector("#nuevo_registro");
+const frm = document.querySelector("#frmRegistro");
+const titleModal = document.querySelector("#titleModal");
+const descripcion = document.querySelector("#descripcion");
+const btnAccion = document.querySelector("#btnAccion");
+const myModal = new bootstrap.Modal(document.getElementById("nuevoModal"));
 
 let tblManzanas;
 document.addEventListener("DOMContentLoaded", function () {
@@ -22,20 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
         buttons,
     });
 
-    //levantar modal
-    nuevoManzana.addEventListener("click", function () {
-        document.querySelector('#id_manzana').value = '';
-        titleModalManzana.textContent = "NUEVA MANZANA";
-        btnAccionManzana.textContent = 'Registrar';
-        frmManzana.reset();
-        myModalManzana.show();
+    // Levantar modal para nueva manzana
+    nuevo.addEventListener("click", function () {
+        document.querySelector('#id').value = '';
+        titleModal.textContent = "NUEVA MANZANA";
+        btnAccion.textContent = 'Registrar';
+        frm.reset();
+        myModal.show();
     });
 
-    //submit manzanas
-    frmManzana.addEventListener("submit", function (e) {
+    // Submit manzanas
+    frm.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (descripcionManzana.value == '') {
-            alertas('La descripción es requerida', 2);
+        if (descripcion.value == '') {
+            alertas('LA DESCRIPCIÓN ES REQUERIDA', 2);
         } else {
             let data = new FormData(this);
             const url = base_url + "manzanas/registrar";
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (this.readyState == 4 && this.status == 200) {
                     const res = JSON.parse(this.responseText);
                     if (res.icono == "success") {
-                        myModalManzana.hide();
+                        myModal.hide();
                         tblManzanas.ajax.reload();
                     }
                     let type = (res.icono == "success") ? 1 : 2;
@@ -86,7 +86,7 @@ function eliminarManzana(idManzana) {
     });
 }
 
-function editarManzana(idManzana) {
+function editManzana(idManzana) {
     const url = base_url + "manzanas/edit/" + idManzana;
     const http = new XMLHttpRequest();
     http.open("GET", url, true);
@@ -94,11 +94,11 @@ function editarManzana(idManzana) {
     http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const res = JSON.parse(this.responseText);
-            document.querySelector('#id_manzana').value = res.id_manzana;
-            document.querySelector('#descripcion_manzana').value = res.descripcion;
-            btnAccionManzana.textContent = 'Actualizar';
-            titleModalManzana.textContent = "MODIFICAR MANZANA";
-            myModalManzana.show();
+            document.querySelector('#id').value = res.id_manzana;
+            document.querySelector('#descripcion').value = res.descripcion;
+            btnAccion.textContent = 'Actualizar';
+            titleModal.textContent = "MODIFICAR MANZANA";
+            myModal.show();
         }
     }
 }
