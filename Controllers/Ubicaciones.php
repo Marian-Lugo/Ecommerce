@@ -81,5 +81,18 @@ class Ubicaciones extends Controller
         }
         die();
     }
+
+    public function ubicacionPorNombre($nombreExtinto)
+    {
+        // Verificar que el nombre no esté vacío
+        if (!empty($nombreExtinto)) {
+            $data = $this->model->buscarExtintoPorNombre($nombreExtinto);
+            echo json_encode($data);
+        } else {
+            echo json_encode(array('error' => 'El nombre del extinto está vacío.'));
+        }
+        die();
+    }
+
 }
 ?>

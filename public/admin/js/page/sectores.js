@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     columns: [
       { data: "id_sector" },
       { data: "descripcion" },
-      { data: "descripcion" },
+      { data: "manzana_descripcion" },
       { data: "accion" },
     ],
     responsive: true,

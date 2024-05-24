@@ -19,10 +19,9 @@ class Manzanas extends Controller
     {
         $data = $this->model->getManzanas(1);
         for ($i = 0; $i < count($data); $i++) {
-            $data[$i]['accion'] = '<div class="d-flex">
-            <button class="btn btn-primary" type="button" onclick="editManzana(' . $data[$i]['id_manzana'] . ')"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-danger" type="button" onclick="eliminarManzana(' . $data[$i]['id_manzana'] . ')"><i class="fas fa-trash"></i></button>
-        </div>';
+            $data[$i]['accion'] = '
+            <a class="btn btn-info" href="#" onclick="editManzana(' . $data[$i]['id_manzana'] . ')"><i class="fas fa-edit"></i> Editar</a>
+            <a class="btn btn-danger" href="#" onclick="eliminarManzana(' . $data[$i]['id_manzana'] . ')"><i class="fas fa-trash"></i> Eliminar</a>';
         }
         echo json_encode($data);
         die();

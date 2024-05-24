@@ -58,6 +58,7 @@
             <ul>
                 <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
                 <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
+                <li><a href="<?php echo BASE_URL . 'principal/mapas'; ?>">Mapas</a></li>
                 <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Sugerencias</a></li>
             </ul>
         </nav>
@@ -122,6 +123,7 @@
                         <ul>
                             <li class="active"><a href="<?php echo BASE_URL; ?>">Inicio</a></li>
                             <li><a href="<?php echo BASE_URL . 'principal/productos'; ?>">Productos</a></li>
+                            <li><a href="<?php echo BASE_URL . 'principal/mapas'; ?>">Mapa</a></li>
                             <li><a href="<?php echo BASE_URL . 'principal/contactos'; ?>">Sugerencias</a></li>
                         </ul>
                     </nav>

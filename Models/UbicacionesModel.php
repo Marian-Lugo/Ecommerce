@@ -41,6 +41,15 @@ class UbicacionesModel extends Query{
         return $this->select($sql);
     }
 
+
+    public function buscarExtintoPorNombre($nombreExtinto)
+    {
+        $nombreExtinto = $this->db->real_escape_string($nombreExtinto);
+        $sql = "SELECT * FROM ubicaciones WHERE nombre_extinto = '$nombreExtinto'";
+        return $this->select($sql);
+    }
+
+
     public function modificar($id_manzana, $id_sector, $nombre_extinto, $descripcion, $estado, $id_ubicacion)
     {
         $sql = "UPDATE ubicaciones SET id_manzana=?, id_sector=?, nombre_extinto=?, descripcion=?, estado=? WHERE id_ubicacion = ?";

@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="contact__form__title">
-                    <h2>Leave Message</h2>
+                    <h2>Deje su mensaje</h2>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-lg-12 text-center">
                     <textarea placeholder="Your message"></textarea>
-                    <button type="submit" class="site-btn">SEND MESSAGE</button>
+                    <button type="submit" class="site-btn">Enviar Mensaje</button>
                 </div>
             </div>
         </form>

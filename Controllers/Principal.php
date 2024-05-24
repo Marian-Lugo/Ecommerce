@@ -118,6 +118,14 @@ class Principal extends Controller
         $this->views->getView('principal', "contactos", $data);
     }
 
+    public function mapas()
+    {
+        $data['title'] = 'Tu carrito';
+        $data['negocio'] = $this->model->getNegocio();
+        $data['categorias'] = $this->model->getCategorias();
+        $this->views->getView('principal', "mapas", $data);
+    }
+
 public function listaProductos()
 {
     $datos = file_get_contents('php://input');
