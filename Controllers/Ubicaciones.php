@@ -39,23 +39,36 @@ class Ubicaciones extends Controller
     }
 
     public function registrar()
-    {
-        if (isset($_POST['id_manzana']) && isset($_POST['id_sector']) && isset($_POST['nombre_extinto']) && isset($_POST['descripcion'])) {
-            $id_manzana = $_POST['id_manzana'];
-            $id_sector = $_POST['id_sector'];
-            $nombre_extinto = $_POST['nombre_extinto'];
-            $descripcion = $_POST['descripcion'];
+{
+    if (isset($_POST['id_manzana']) && isset($_POST['id_sector']) && isset($_POST['nombre_extinto']) && isset($_POST['descripcion'])) {
+        $id_manzana = $_POST['id_manzana'];
+        $id_sector = $_POST['id_sector'];
+        $nombre_extinto = $_POST['nombre_extinto'];
+        $descripcion = $_POST['descripcion'];
 
+        if (empty($_POST['id'])) { 
+            // Registrar nueva ubicación
             $data = $this->model->registrar($id_manzana, $id_sector, $nombre_extinto, $descripcion, 1);
             if ($data > 0) {
-                $respuesta = array('msg' => 'ubicación registrada', 'icono' => 'success');
+                $respuesta = array('msg' => 'Ubicación registrada', 'icono' => 'success');
             } else {
-                $respuesta = array('msg' => 'error al registrar', 'icono' => 'error');
+                $respuesta = array('msg' => 'Error al registrar', 'icono' => 'error');
             }
-            echo json_encode($respuesta);
+        } else {
+            // Modificar ubicación existente
+            $id_ubicacion = $_POST['id'];
+            $data = $this->model->modificar($id_manzana, $id_sector, $nombre_extinto, $descripcion, 1, $id_ubicacion);
+            if ($data == 1) {
+                $respuesta = array('msg' => 'Ubicación modificada', 'icono' => 'success');
+            } else {
+                $respuesta = array('msg' => 'Error al modificar', 'icono' => 'error');
+            }
         }
-        die();
+        echo json_encode($respuesta);
     }
+    die();
+}
+
 
     public function delete($idUbicacion)
     {
